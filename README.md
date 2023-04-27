@@ -1,6 +1,7 @@
 # SumoWrestlingMatchPredictor
 
 ## Overview & Problem Statement 
+
 Sumo wrestling is a sport that originated in Japan, with a history spanning centuries. It has become an integral part of Japanese culture and tradition, captivating audiences with its unique combination of athleticism and strategy.
 
 In this project, we will be analyzing data on sumo wrestlers to predict the outcome of matches. The dataset contains information on wrestlers’ physical characteristics such as their height and weight, as well as details on each wrestler's rank and the result of each tournament match.
@@ -14,11 +15,13 @@ Additionally, a Tableau dashboard will be created to visualize the data and pred
 --- 
 
 ## Data
+
 This project uses two datasets, banzuke.csv and results.csv, from [data.world](https://data.world/cervus/sumo-japan). They contain information about sumo rankings, the results of each oturnament match, wrestler's pysical characteristics and personal information such as weight, height, hometown and birth date. The datasets are available in CSV format. 
 
 ---
 
 ## Tableau Visualizations 
+
 In addition to traditional data analysis using Python, we also used Tableau for exploratory data analysis (EDA). 
 
 - [Sumo Wrestling Outcome Prediction | EDA](https://public.tableau.com/views/SumoWrestlingOutcomePredictionEDA/D_Prediction_Height_Weight?:language=en-US&:display_count=n&:origin=viz_share_link): These charts explore the relationship between various features of sumo wrestlers such as height, weight, age, and rank and their likelihood of winning a match.
@@ -28,14 +31,16 @@ In addition, we created interactive dashboards for sumo fans and practitioners.
 
 ---
 
-## Models 
+## Model Building
+
 We use PyCaret, an open-source machine learning library in Python that automates machine learning workflows with minimal coding required. PyCaret allowed us to spend less time coding and more time analyzing data, by automating many of the repetitive tasks involved in the modeling process. Using PyCaret, we developed and tested a variety of different models.
 
 We started by developing classification models using the existing numeric data to see how they performed before any feature engineering was done. Once we had a benchmark, we developed models incorporating new features created as part of our feature engineering process. This allowed us to see how these new features impacted the performance of our models, and whether they improved the ability to predict the outcome of matches.
 
 ---
 
-## Results 
+## Evaluation
+
 The model performance was evaluated using several metrics such as accuracy, AUC, recall, precision, F1-score, Kappa, Matthews correlation coefficient (MCC), and training time (TT). 
 
 While the baseline for model performance was 0.5, all models using the existing numeric data have an accuracy above the baseline. However, the highest accuracy achieved by Extreme Gradient Boosting was only 0.5713, indicating that the performance of all models performed only slightly better than random guessing.
@@ -61,6 +66,24 @@ Next, we developed models incorporating new features. Overall, these models perf
 | dummy | Dummy Classifier | 0.50000 | 0.5000 | 0.5000 | 0.2500 | 0.3333 | 0.0000 | 0.0000 | 0.3660 | 
 
 Based on these results, Light Gradient Boosting Machine and Extreme Gradient have similar accuracy and AUC scores, but Light Gradient Boosting Machine performs better in identifying positive values, as shown by its slightly higher precision score.
+
+---
+
+## Conclusion & Recommendations
+
+**Conclusion**
+After conducting extensive data cleaning, exploratory data analysis, and feature engineering, I have identified several factors that significantly impact the outcome of a Sumo wrestling match. My analysis shows that the wrestler's rank, age, and the number of wins in previous and current tournaments are essential predictors of match outcomes.
+
+I have developed several machine learning models, and Light Gradient Boosting Machine and Extreme Gradient Boosting models achieved an accuracy score of 0.78, making them the preferred models for predicting match outcomes.
+
+My Tableau dashboard provides an interactive platform that enables fans and practitioners to explore and visualize the data and predictions.
+
+**Recommendations**
+I recommend collecting more data on Sumo wrestlers, including physical characteristics, injury history, and the number of wins based on the wrestler's rank, to further improve our models' performance.
+
+Based on user feedback and needs, I will expand and update our Tableau dashboard to provide more features and insights. Additionally, I recommend developing a mobile app on Streamlit that allows Sumo fans to predict different Sumo wrestling games.
+
+My findings can provide valuable insights to Sumo practitioners and coaches, allowing them to make more informed decisions when developing training and coaching strategies.
 
 ---
 
